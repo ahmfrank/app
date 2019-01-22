@@ -8,3 +8,5 @@ Dokcer-AWS-ECS
   $aws  ecr  describe-repositories  --repository-name  << The name of repository >>
 ** tag docker image file **
   $docker  tag <<the name of image>>   repository_URL/<<Repository_Name>>:v_${BUILD_NUMBER}
+** Push to ECR **
+  $docker push repository_URL/<<Repository_Name>>:v_${BUILD_NUMBER}
