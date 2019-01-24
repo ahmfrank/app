@@ -12,3 +12,5 @@ Dokcer-AWS-ECS
   $docker  tag <<the name of image>>   repository_URL/<<Repository_Name>>:v_${BUILD_NUMBER}
 ** Push to ECR **
   $docker push repository_URL/<<Repository_Name>>:v_${BUILD_NUMBER}
+** Build IAM roles with iam.yml file , and do command as below**
+  aws cloudformation create-stack --stack-name iam --template-body file://$PWD/iam.yml --capabilities  CAPABILITY_IAM
