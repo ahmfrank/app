@@ -3,9 +3,9 @@ require "sinatra/namespace"
 
 class Book
     @@books = [
-         { id: "123", name: "Docker for AHM" },
-         { id: "124", name: "Docker with Kubernetes" }
-         { id: "125", name: "Docker on ECS" }
+         { id: "Test-1", name: "Docker for AHM" },
+         { id: "Test-2", name: "Docker with Fargate" }
+         { id: "Test-3", name: "Docker on ECS" }
     ]
 
     def self.all
