@@ -4,7 +4,7 @@ Description: roles and policies
 Resources:
 
   ECSTaskExecutionRole:
-    Type: AWS::IAM::role
+    Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
         Statement:
