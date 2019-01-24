@@ -2,7 +2,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: roles and policies
 Resources:
-
   ECSTaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -12,22 +11,23 @@ Resources:
           Principal:
             Service: [ecs-tasks.amazonaws.com]
           Action: ['sts:AssumeRole']
-      path: /
+      Path: /
       Policies:
         - PolicyName: AmazonECSTaskExecutionRolePolicy
           PolicyDocument:
             Statement:
             - Effect: Allow
               Action:
-                #ECS Task to download images from ECS
-                 - 'ecr:GetAuthorizationToken'
-                 - 'ecr:BatchCheckLayerAvailability'
-                 - 'ecr:GetDownloadUrlForLayer'
-                 - 'ecr:BatchGetImage'
-                 # ECS tasks to upload logs to CloudWatch
-                 - 'logs:CreateLogStream'
-                 - 'logs:PutLogEvents'
-              Resources: '*'
+                # Allow the ECS Tasks to download images from ECR
+                - 'ecr:GetAuthorizationToken'
+                - 'ecr:BatchCheckLayerAvailability'
+                - 'ecr:GetDownloadUrlForLayer'
+                - 'ecr:BatchGetImage'
+
+                # Allow the ECS tasks to upload logs to CloudWatch
+                - 'logs:CreateLogStream'
+                - 'logs:PutLogEvents'
+              Resource: '*'
 
 Outputs:
 
