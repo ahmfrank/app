@@ -14,3 +14,5 @@ Dokcer-AWS-ECS
   $docker push repository_URL/<<Repository_Name>>:v_${BUILD_NUMBER}
 ** Build IAM roles with iam.yml file , and do command as below**
   aws cloudformation create-stack --stack-name iam --template-body file://$PWD/iam.yml --capabilities  CAPABILITY_IAM
+** Create app-clude yaml file then run **
+  aws cloudformation create-stack --stack-name  app-cluster.yml file://$PWD/app-cluster.yml
