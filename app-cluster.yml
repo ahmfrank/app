@@ -45,7 +45,7 @@ Resources:
       Protocol: 'HTTP'
       Port: '80'
 
-  VloudWatchLogsGroup:
+  CloudWatchLogsGroup:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: 'apis'
