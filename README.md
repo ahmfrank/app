@@ -1,5 +1,9 @@
 # app
 Dokcer-AWS-ECS
+Github souce code pull in Jenkins maven build jar/war --> docker host to build docker image and 
+Push docker image to AWS ECR repository (Jenkins use ssh function to run)
+Then Running aws cloudformation with below yaml files to deploy docker image on AWS Fargate ECS 
+
 * Create AWS ECR repository command*
   $aws  ecr create-repository  --repository-name  <<he name of repository>>
 * to loggin to AWS 
