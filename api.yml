@@ -73,7 +73,7 @@ Resources:
       Conditions:
         - Field: path-pattern
           Values:
-            - /api/ahm*
+            - /webapp
       Actions:
         - TargetGroupArn: !Ref TargetGroup
           Type: forward
