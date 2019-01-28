@@ -83,6 +83,6 @@ Outputs:
 
   ApiEndpoint:
     Description: AHM ApiEndpoint
-    Value: !Join ['',['http://', !ImportValue DomainName, '/api/ahm']]
+    Value: !Join ['',['http://', !ImportValue DomainName, '/webapp']]
     Export:
       Name: 'AHM-Api-Endpoint'
