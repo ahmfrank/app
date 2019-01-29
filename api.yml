@@ -24,7 +24,7 @@ Resources:
             Options:
               awslogs-group: 'apis'
               awslogs-region: !Ref AWS::Region
-              awslogs-stream-prefix: 'docker-images'
+              awslogs-stream-prefix: 'demo-api'
 
   Service:
     Type: AWS::ECS::Service
@@ -53,6 +53,7 @@ Resources:
   TargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
+      Name: Container-TargetGroup
       VpcId: !ImportValue VPC
       Port: 80
       Protocol: HTTP
@@ -82,7 +83,7 @@ Resources:
 Outputs:
 
   ApiEndpoint:
-    Description: AHM ApiEndpoint
+    Description: Frank ApiEndpoint
     Value: !Join ['',['http://', !ImportValue DomainName, '/webapp']]
     Export:
-      Name: 'AHM-Api-Endpoint'
+      Name: 'Frank-Api-Endpoint'
