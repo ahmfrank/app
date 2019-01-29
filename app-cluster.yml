@@ -11,7 +11,7 @@ Resources:
   LoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
-      Name: ecs-services
+      Name: fargate-ecs-services
       Subnets:
         - !ImportValue Subnet1
         - !ImportValue Subnet2
@@ -40,10 +40,10 @@ Resources:
   DefaultTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      Name: Default
-      VpcId: !ImportValue 'VPC'
-      Protocol: 'HTTP'
-      Port: '80'
+      Name: Default-TargetGroup
+      VpcId: !ImportValue VPC
+      Protocol: HTTP
+      Port: 80
 
   CloudWatchLogsGroup:
     Type: AWS::Logs::LogGroup
